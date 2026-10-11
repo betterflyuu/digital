@@ -11,11 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #003d35;
-      --deep: #002d29;
-      --green: #00e5a0;
-      --mint: #9effd8;
-      --soft: #d7fff0;
+      --bg: #00463b;
+      --deep: #00352e;
+      --green: #00f0a8;
+      --mint: #9dffd9;
+      --soft: #dcfff2;
       --line: rgba(133,255,218,.22);
       --muted: rgba(220,255,242,.68);
     }
@@ -29,17 +29,21 @@
     body::before {
       content: ""; position: fixed; inset: -35%; z-index: -2; pointer-events: none;
       background:
-        radial-gradient(ellipse at 15% 15%, rgba(0,242,160,.28), transparent 34%),
-        radial-gradient(ellipse at 80% 28%, rgba(0,184,135,.30), transparent 32%),
+        radial-gradient(ellipse at 15% 15%, rgba(0,242,160,.36), transparent 34%),
+        radial-gradient(ellipse at 80% 28%, rgba(0,184,135,.34), transparent 32%),
         radial-gradient(ellipse at 55% 80%, rgba(3,119,93,.52), transparent 40%),
-        linear-gradient(135deg, #003e37, #00634f 48%, #003a34);
-      background-size: 160% 160%; animation: flow 22s ease-in-out infinite alternate;
+        linear-gradient(135deg, #00463b, #007b5d 48%, #003a34);
+      background-size: 220% 220%; animation: flow 13s cubic-bezier(.45,0,.55,1) infinite alternate;
     }
     body::after {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .12;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.23'/%3E%3C/svg%3E");
     }
-    @keyframes flow { 0% { background-position: 0% 30%; transform: rotate(0deg) scale(1); } 100% { background-position: 100% 70%; transform: rotate(2deg) scale(1.05); } }
+    @keyframes flow {
+      0% { background-position: 0% 35%; transform: rotate(0deg) scale(1); }
+      50% { background-position: 70% 10%; transform: rotate(1deg) scale(1.035); }
+      100% { background-position: 100% 75%; transform: rotate(-1deg) scale(1.06); }
+    }
     @keyframes float { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-9px) rotate(3deg); } }
     @keyframes pulse { 0%,100% { opacity: .55; transform: scale(.92); } 50% { opacity: 1; transform: scale(1.08); } }
     @keyframes shine { 0% { transform: translateX(-130%) skewX(-18deg); } 100% { transform: translateX(240%) skewX(-18deg); } }
@@ -50,7 +54,7 @@
     }
     .topbar { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
-    .brand-mark { width: 34px; height: 34px; color: var(--green); filter: drop-shadow(0 0 12px rgba(0,255,174,.45)); }
+    .brand-mark { width: 38px; height: 34px; color: var(--green); filter: drop-shadow(0 0 12px rgba(0,255,174,.45)); }
     .brand-name { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: .04em; line-height: 1; }
     .brand-sub { display: block; margin-top: 6px; font: 9px 'DM Mono', monospace; letter-spacing: .25em; color: var(--mint); }
     .top-tag { font: 10px 'DM Mono', monospace; letter-spacing: .14em; color: var(--mint); border: 1px solid var(--line); border-radius: 99px; padding: 10px 13px; white-space: nowrap; }
@@ -66,7 +70,7 @@
       box-shadow: 0 0 28px rgba(0,255,174,.08), inset 0 0 22px rgba(190,255,229,.04);
       color: var(--green); overflow: hidden;
     }
-    .avatar-butterfly { width: 48px; height: 48px; filter: drop-shadow(0 0 10px rgba(0,255,174,.24)); }
+    .avatar-butterfly { width: 54px; height: 48px; filter: drop-shadow(0 0 10px rgba(0,255,174,.24)); }
     .butterfly { position: absolute; width: 31px; height: 31px; right: -20px; top: 5px; color: var(--green); animation: float 5s ease-in-out infinite; filter: drop-shadow(0 0 5px rgba(0,255,174,.25)); }
     h1 { margin: 0; font: 600 clamp(37px, 8vw, 58px)/1.03 'Oswald', sans-serif; letter-spacing: .025em; text-transform: lowercase; }
     .script { display: block; margin-top: 0; color: var(--mint); font: 600 clamp(35px, 7vw, 48px)/1.15 'Caveat', cursive; }
@@ -120,7 +124,7 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#" aria-label="betterflyuu home">
-        <svg class="brand-mark" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M22 22C12 5 1 10 4 22c2 8 11 11 18 5-5 10 2 17 2 17s7-7 2-17c7 6 16 3 18-5 3-12-8-17-18 0-1-4-2-4-4 0Z"/></svg>
+        <svg class="brand-mark" viewBox="0 0 64 56" fill="currentColor" aria-hidden="true"><path d="M29 25C24 8 9 1 4 10c-5 10 4 22 20 24-4 11 1 19 8 21 7-2 12-10 8-21 16-2 25-14 20-24-5-9-20-2-25 15-1-3-3-3-6 0Z"/></svg>
         <span><span class="brand-name">betterflyuu</span><span class="brand-sub">DIGITAL UNIVERSE</span></span>
       </a>
       <span class="top-tag">LINKS / 2026</span>
@@ -133,8 +137,8 @@
       <div class="avatar-shell">
         <div class="avatar-ring"></div>
         <div class="avatar" aria-label="Identitas kupu-kupu Betterflyuu">
-          <svg class="avatar-butterfly" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
-            <path d="M22 22C12 5 1 10 4 22c2 8 11 11 18 5-5 10 2 17 2 17s7-7 2-17c7 6 16 3 18-5 3-12-8-17-18 0-1-4-2-4-4 0Z"/>
+          <svg class="avatar-butterfly" viewBox="0 0 64 56" fill="currentColor" aria-hidden="true">
+            <path d="M29 25C24 8 9 1 4 10c-5 10 4 22 20 24-4 11 1 19 8 21 7-2 12-10 8-21 16-2 25-14 20-24-5-9-20-2-25 15-1-3-3-3-6 0Z"/>
           </svg>
         </div>
         <svg class="butterfly" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M22 22C12 5 1 10 4 22c2 8 11 11 18 5-5 10 2 17 2 17s7-7 2-17c7 6 16 3 18-5 3-12-8-17-18 0-1-4-2-4-4 0Z"/></svg>
